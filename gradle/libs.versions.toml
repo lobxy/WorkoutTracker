@@ -16,6 +16,7 @@ lifecycleExtensions = "2.2.0"
 material = "1.10.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
+roomKtx = "<version>"
 roomRuntime = "2.6.1"
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.8.2"
@@ -28,6 +29,7 @@ androidx-lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensi
 androidx-fragment-ktx-v125 = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtxVersion" }
 androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "lifecycleRuntimeKtx" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltCompiler" }

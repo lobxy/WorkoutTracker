@@ -71,13 +71,14 @@ dependencies {
 
     //room
     implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    //noinspection KaptUsageInsteadOfKsp
+    kapt(libs.androidx.room.compiler)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
-    annotationProcessor(libs.androidx.room.compiler)
 
     //hilt
     implementation(libs.hilt.android)
-//    annotationProcessor(libs.hilt.android.compiler)
     kapt(libs.hilt.android.compiler.v251)
 
     //viewmodel
