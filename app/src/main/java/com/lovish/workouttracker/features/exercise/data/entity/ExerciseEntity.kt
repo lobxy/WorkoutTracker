@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class ExerciseEntity(
     @PrimaryKey(autoGenerate = true) val primaryKey: Int = 0,
-    @ColumnInfo(name = "hello") val name: String? = null
+    @ColumnInfo() val name: String? = null
 ) {
 
 }

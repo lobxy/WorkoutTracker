@@ -20,7 +20,7 @@ class CoreModule {
     fun providesAppDatabase(@ApplicationContext context: Context): WorkoutTrackerDB {
         return Room.databaseBuilder(
             context, WorkoutTrackerDB::class.java, Constants.APP_DATABASE_NAME
-        ).build()
+        ).fallbackToDestructiveMigration().build()
     }
 
 }

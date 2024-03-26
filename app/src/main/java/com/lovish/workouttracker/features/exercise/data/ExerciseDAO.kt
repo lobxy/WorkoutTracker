@@ -18,6 +18,6 @@ interface ExerciseDAO {
     suspend fun upsertExercise(exerciseEntity: ExerciseEntity): Long
 
     @Query("DELETE FROM ExerciseEntity where primaryKey =:id")
-    suspend fun deleteExercise(id: Int): Long
+    suspend fun deleteExercise(id: Int)
 
 }
