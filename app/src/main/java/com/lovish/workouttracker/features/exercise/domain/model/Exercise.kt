@@ -1,3 +1,7 @@
 package com.lovish.workouttracker.features.exercise.domain.model
 
-class Exercise
+data class Exercise(
+    val title: String? = null
+) {
+
+}

@@ -1,15 +1,17 @@
 package com.lovish.workouttracker.features.exercise.domain.repository
 
-import com.lovish.workouttracker.features.exercise.data.ExerciseDAO
 import com.lovish.workouttracker.features.exercise.data.entity.ExerciseEntity
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
-import javax.inject.Inject
 
-class ExerciseRepositoryImpl @Inject constructor(private val dao: ExerciseDAO) {
+interface ExerciseRepository {
 
-    fun upsertThings(): Flow<Int> = flow {
-        dao.upsertExercise(ExerciseEntity(name = "Hello"))
-    }
+    fun getExerciseById(id: Int): Flow<List<ExerciseEntity>>
 
+    fun getAllExercises(): Flow<List<ExerciseEntity>>
+
+    fun insertExercise(): Flow<Long>
+
+    fun updateExercise(): Flow<Long>
+
+    fun deleteExercise(id: Int): Flow<Long>
 }
