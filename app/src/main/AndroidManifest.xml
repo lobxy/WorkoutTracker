@@ -14,8 +14,10 @@
         android:theme="@style/Theme.WorkoutTracker"
         tools:targetApi="31">
         <activity
-            android:name=".features.exercise.presentation.MainActivity"
-            android:exported="true">
+            android:name=".features.exercise.presentation.ui.AddExerciseActivity"
+            android:exported="true"
+            android:label="@string/title_activity_add_exercise"
+            android:theme="@style/Theme.WorkoutTracker">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

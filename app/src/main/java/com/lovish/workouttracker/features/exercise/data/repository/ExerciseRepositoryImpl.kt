@@ -3,6 +3,7 @@ package com.lovish.workouttracker.features.exercise.data.repository
 import com.lovish.workouttracker.common.Resource
 import com.lovish.workouttracker.features.exercise.data.ExerciseDAO
 import com.lovish.workouttracker.features.exercise.data.entity.ExerciseEntity
+import com.lovish.workouttracker.features.exercise.domain.model.Exercise
 import com.lovish.workouttracker.features.exercise.domain.repository.ExerciseRepository
 import com.lovish.workouttracker.features.exercise.domain.use_case.GetExercisesErrors
 import kotlinx.coroutines.flow.Flow
@@ -11,9 +12,9 @@ import javax.inject.Inject
 
 class ExerciseRepositoryImpl @Inject constructor(private val dao: ExerciseDAO) : ExerciseRepository {
 
-    override fun getExerciseById(id: Int): Flow<Resource<List<ExerciseEntity>>> = flow {
+    override fun getExerciseById(id: Int): Flow<Resource<List<Exercise>>> = flow {
         emit(Resource.Loading())
-        val value = dao.getExerciseById(id)
+        val value = dao.getExerciseById(id).map { it.toExercise() }
         if (value.isEmpty()) {
             emit(Resource.Error(GetExercisesErrors.EMPTY.ordinal))
         } else {
@@ -21,9 +22,9 @@ class ExerciseRepositoryImpl @Inject constructor(private val dao: ExerciseDAO) :
         }
     }
 
-    override fun getAllExercises(): Flow<Resource<List<ExerciseEntity>>> = flow {
+    override fun getAllExercises(): Flow<Resource<List<Exercise>>> = flow {
         emit(Resource.Loading())
-        val value = dao.getAllExercises()
+        val value = dao.getAllExercises().map { it.toExercise() }
         if (value.isEmpty()) {
             emit(Resource.Error())
         } else {

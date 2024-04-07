@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Workout Tracker</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_add_exercise">AddExerciseActivity</string>
+    <string name="exercise_error_title_missing">Please provide title of the exercise</string>
+    <string name="exercise_error_description_missing">Please provide description for the exercise</string>
 </resources>
